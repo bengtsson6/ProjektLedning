@@ -116,10 +116,6 @@ public class Pycelle {
 		btn_staffPanel_read.setBounds(162, 212, 89, 23);
 		staffPanel.add(btn_staffPanel_read);
 		
-		JButton btn_staffPanel_Back = new JButton("< Back");
-		btn_staffPanel_Back.setBounds(0, 0, 89, 23);
-		staffPanel.add(btn_staffPanel_Back);
-		
 		JRadioButton rdbtn_staffPanel_secLvl2 = new JRadioButton("Security level 2");
 		rdbtn_staffPanel_secLvl2.setBounds(165, 100, 129, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl2);
