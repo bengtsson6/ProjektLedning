@@ -14,6 +14,8 @@ import javax.swing.JComboBox;
 import javax.swing.JLayeredPane;
 import java.awt.CardLayout;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 
 public class Pycelle {
 
@@ -151,5 +153,12 @@ public class Pycelle {
 		JLabel lbl_staffPanel_obligatorySL = new JLabel("*");
 		lbl_staffPanel_obligatorySL.setBounds(148, 9, 11, 14);
 		staffPanel.add(lbl_staffPanel_obligatorySL);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(282, 173, 95, 42);
+		staffPanel.add(scrollPane);
+		
+		JTextArea textArea = new JTextArea();
+		scrollPane.setViewportView(textArea);
 	}
 }
