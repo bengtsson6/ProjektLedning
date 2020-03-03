@@ -99,12 +99,8 @@ public class Pycelle {
 		staffPanel.add(btn_staffPanel_delete);
 		
 		JButton btn_staffPanel_update = new JButton("Update");
-		btn_staffPanel_update.setBounds(435, 178, 89, 23);
+		btn_staffPanel_update.setBounds(336, 212, 89, 23);
 		staffPanel.add(btn_staffPanel_update);
-		
-		JComboBox comboBox_staffPanel_chooseSN = new JComboBox();
-		comboBox_staffPanel_chooseSN.setBounds(428, 145, 96, 22);
-		staffPanel.add(comboBox_staffPanel_chooseSN);
 		
 		JComboBox comboBox_startPanel_chooseTitle = new JComboBox();
 		comboBox_startPanel_chooseTitle.setModel(new DefaultComboBoxModel(new String[] {"Teacher", "Professor", "Administator", "Janitor", "Receptionist", "Cleaning staff", "Guest"}));
