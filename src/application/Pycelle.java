@@ -22,6 +22,10 @@ public class Pycelle {
 	private JTextField txtfield_staffPanel_name;
 	private JTextField txtField_staffPanel_phoneNumber;
 	private JTextField txtField_staffPanel_eMail;
+<<<<<<< Updated upstream
+=======
+	private JTable JTable_staffPanel;
+>>>>>>> Stashed changes
 
 	/**
 	 * Launch the application.
@@ -81,13 +85,13 @@ public class Pycelle {
 		
 		txtField_staffPanel_phoneNumber = new JTextField();
 		txtField_staffPanel_phoneNumber.setText("Phone number");
-		txtField_staffPanel_phoneNumber.setBounds(63, 96, 96, 20);
+		txtField_staffPanel_phoneNumber.setBounds(63, 129, 96, 20);
 		staffPanel.add(txtField_staffPanel_phoneNumber);
 		txtField_staffPanel_phoneNumber.setColumns(10);
 		
 		txtField_staffPanel_eMail = new JTextField();
 		txtField_staffPanel_eMail.setText("E-mail");
-		txtField_staffPanel_eMail.setBounds(63, 127, 96, 20);
+		txtField_staffPanel_eMail.setBounds(63, 160, 96, 20);
 		staffPanel.add(txtField_staffPanel_eMail);
 		txtField_staffPanel_eMail.setColumns(10);
 		
@@ -96,20 +100,20 @@ public class Pycelle {
 		staffPanel.add(btn_staffPanel_addStaff);
 		
 		JButton btn_staffPanel_delete = new JButton("Delete");
-		btn_staffPanel_delete.setBounds(305, 64, 89, 23);
+		btn_staffPanel_delete.setBounds(435, 212, 89, 23);
 		staffPanel.add(btn_staffPanel_delete);
 		
 		JButton btn_staffPanel_update = new JButton("Update");
-		btn_staffPanel_update.setBounds(305, 95, 89, 23);
+		btn_staffPanel_update.setBounds(435, 178, 89, 23);
 		staffPanel.add(btn_staffPanel_update);
 		
 		JComboBox comboBox_staffPanel_chooseSN = new JComboBox();
-		comboBox_staffPanel_chooseSN.setBounds(295, 33, 96, 22);
+		comboBox_staffPanel_chooseSN.setBounds(428, 145, 96, 22);
 		staffPanel.add(comboBox_staffPanel_chooseSN);
 		
 		JComboBox comboBox_startPanel_chooseTitle = new JComboBox();
 		comboBox_startPanel_chooseTitle.setEditable(true);
-		comboBox_startPanel_chooseTitle.setBounds(63, 158, 96, 22);
+		comboBox_startPanel_chooseTitle.setBounds(63, 96, 96, 22);
 		staffPanel.add(comboBox_startPanel_chooseTitle);
 		
 		JButton btn_staffPanel_read = new JButton("Read?");
@@ -149,7 +153,7 @@ public class Pycelle {
 		staffPanel.add(lbl_staffPanel_obligatoryN);
 		
 		JLabel lbl_staffPanel_obligatoryT = new JLabel("*");
-		lbl_staffPanel_obligatoryT.setBounds(52, 162, 11, 14);
+		lbl_staffPanel_obligatoryT.setBounds(52, 100, 11, 14);
 		staffPanel.add(lbl_staffPanel_obligatoryT);
 		
 		JLabel lbl_staffPanel_chooseSecurityLevel = new JLabel("Choose security level:");
@@ -159,5 +163,29 @@ public class Pycelle {
 		JLabel lbl_staffPanel_obligatorySL = new JLabel("*");
 		lbl_staffPanel_obligatorySL.setBounds(148, 9, 11, 14);
 		staffPanel.add(lbl_staffPanel_obligatorySL);
+<<<<<<< Updated upstream
+=======
+		
+		JScrollPane scrollPane_staffPanel_txtA = new JScrollPane();
+		scrollPane_staffPanel_txtA.setBounds(10, 276, 247, 69);
+		staffPanel.add(scrollPane_staffPanel_txtA);
+		
+		JTextArea textArea_staffPanel = new JTextArea();
+		scrollPane_staffPanel_txtA.setViewportView(textArea_staffPanel);
+		
+		JScrollPane scrollPane_staffPanel_Jtbl = new JScrollPane();
+		scrollPane_staffPanel_Jtbl.setBounds(267, 276, 282, 69);
+		staffPanel.add(scrollPane_staffPanel_Jtbl);
+		
+		JTable_staffPanel = new JTable();
+		JTable_staffPanel.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"Name"
+			}
+		));
+		scrollPane_staffPanel_Jtbl.setViewportView(JTable_staffPanel);
+>>>>>>> Stashed changes
 	}
 }
