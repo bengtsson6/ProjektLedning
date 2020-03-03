@@ -9,7 +9,7 @@ public class Staff {
 	private String email;
 	private String title;
 	private ArrayList<SecurityLevel> securityLevel = new ArrayList<SecurityLevel>();
-                     
+                     j
 	public Staff(String name, String socialNumber, String phoneNumber, String email, String title) {
 		this.name = name;
 		this.socialNumber = socialNumber;
