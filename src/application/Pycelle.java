@@ -55,14 +55,6 @@ public class Pycelle {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
 		
-		JPanel startPanel = new JPanel();
-		frame.getContentPane().add(startPanel, "name_1636477351019900");
-		startPanel.setLayout(null);
-		
-		JButton btnManageStaff = new JButton("Manage staff");
-		btnManageStaff.setBounds(156, 104, 112, 23);
-		startPanel.add(btnManageStaff);
-		
 		JPanel staffPanel = new JPanel();
 		frame.getContentPane().add(staffPanel, "name_1636471965543000");
 		staffPanel.setLayout(null);
