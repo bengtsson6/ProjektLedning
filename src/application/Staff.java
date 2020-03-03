@@ -10,6 +10,10 @@ public class Staff {
 	private String title;
 	private ArrayList<SecurityLevel> securityLevel = new ArrayList<SecurityLevel>();
                      
+	
+	public Staff() {
+		
+	}
 	public Staff(String name, String socialNumber, String phoneNumber, String email, String title) {
 		this.name = name;
 		this.socialNumber = socialNumber;
