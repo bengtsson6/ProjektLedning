@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JLayeredPane;
@@ -20,14 +21,15 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
 
-public class Pycelle {
-
+public class Pycelle extends JFrame{
+	private Controller controller;
 	private JFrame frame;
 	private JTextField txtField_staffPanel_socialNumber;
 	private JTextField txtfield_staffPanel_name;
 	private JTextField txtField_staffPanel_phoneNumber;
 	private JTextField txtField_staffPanel_eMail;
 	private JTable JTable_staffPanel;
+	private JPanel staffPanel;
 
 
 	/**
@@ -37,8 +39,8 @@ public class Pycelle {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Pycelle window = new Pycelle();
-					window.frame.setVisible(true);
+					Pycelle window = new Pycelle(new Controller());
+					window.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -49,21 +51,14 @@ public class Pycelle {
 	/**
 	 * Create the application.
 	 */
-	public Pycelle() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 573, 393);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new CardLayout(0, 0));
-		
-		JPanel staffPanel = new JPanel();
-		frame.getContentPane().add(staffPanel, "name_1636471965543000");
+	public Pycelle(Controller controller) {
+		setTitle("Start");
+		this.controller = controller;
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1083, 686);
+		staffPanel = new JPanel();
+		staffPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(staffPanel);
 		staffPanel.setLayout(null);
 		
 		txtField_staffPanel_socialNumber = new JTextField();
