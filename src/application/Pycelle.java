@@ -14,6 +14,10 @@ import javax.swing.JComboBox;
 import javax.swing.JLayeredPane;
 import java.awt.CardLayout;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class Pycelle {
 
@@ -22,10 +26,8 @@ public class Pycelle {
 	private JTextField txtfield_staffPanel_name;
 	private JTextField txtField_staffPanel_phoneNumber;
 	private JTextField txtField_staffPanel_eMail;
-<<<<<<< Updated upstream
-=======
 	private JTable JTable_staffPanel;
->>>>>>> Stashed changes
+
 
 	/**
 	 * Launch the application.
@@ -55,17 +57,9 @@ public class Pycelle {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 573, 393);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
-		
-		JPanel startPanel = new JPanel();
-		frame.getContentPane().add(startPanel, "name_1636477351019900");
-		startPanel.setLayout(null);
-		
-		JButton btnManageStaff = new JButton("Manage staff");
-		btnManageStaff.setBounds(156, 104, 112, 23);
-		startPanel.add(btnManageStaff);
 		
 		JPanel staffPanel = new JPanel();
 		frame.getContentPane().add(staffPanel, "name_1636471965543000");
@@ -163,8 +157,6 @@ public class Pycelle {
 		JLabel lbl_staffPanel_obligatorySL = new JLabel("*");
 		lbl_staffPanel_obligatorySL.setBounds(148, 9, 11, 14);
 		staffPanel.add(lbl_staffPanel_obligatorySL);
-<<<<<<< Updated upstream
-=======
 		
 		JScrollPane scrollPane_staffPanel_txtA = new JScrollPane();
 		scrollPane_staffPanel_txtA.setBounds(10, 276, 247, 69);
@@ -179,13 +171,16 @@ public class Pycelle {
 		
 		JTable_staffPanel = new JTable();
 		JTable_staffPanel.setModel(new DefaultTableModel(
+
 			new Object[][] {
 			},
 			new String[] {
 				"Name"
 			}
 		));
+
 		scrollPane_staffPanel_Jtbl.setViewportView(JTable_staffPanel);
->>>>>>> Stashed changes
+
+		scrollPane_1.setViewportView(table);
 	}
 }
