@@ -13,6 +13,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JLayeredPane;
 import java.awt.CardLayout;
+import javax.swing.JLabel;
 
 public class Pycelle {
 
@@ -138,5 +139,25 @@ public class Pycelle {
 		JRadioButton rdbtn_staffPanel_secLvl1 = new JRadioButton("Security level 1");
 		rdbtn_staffPanel_secLvl1.setBounds(165, 33, 111, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl1);
+		
+		JLabel lbl_staffPanel_obligatorySN = new JLabel("*");
+		lbl_staffPanel_obligatorySN.setBounds(52, 37, 11, 14);
+		staffPanel.add(lbl_staffPanel_obligatorySN);
+		
+		JLabel lbl_staffPanel_obligatoryN = new JLabel("*");
+		lbl_staffPanel_obligatoryN.setBounds(52, 68, 11, 14);
+		staffPanel.add(lbl_staffPanel_obligatoryN);
+		
+		JLabel lbl_staffPanel_obligatoryT = new JLabel("*");
+		lbl_staffPanel_obligatoryT.setBounds(52, 162, 11, 14);
+		staffPanel.add(lbl_staffPanel_obligatoryT);
+		
+		JLabel lbl_staffPanel_chooseSecurityLevel = new JLabel("Choose security level:");
+		lbl_staffPanel_chooseSecurityLevel.setBounds(162, 9, 114, 14);
+		staffPanel.add(lbl_staffPanel_chooseSecurityLevel);
+		
+		JLabel lbl_staffPanel_obligatorySL = new JLabel("*");
+		lbl_staffPanel_obligatorySL.setBounds(148, 9, 11, 14);
+		staffPanel.add(lbl_staffPanel_obligatorySL);
 	}
 }
