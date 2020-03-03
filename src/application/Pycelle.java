@@ -180,7 +180,5 @@ public class Pycelle {
 		));
 
 		scrollPane_staffPanel_Jtbl.setViewportView(JTable_staffPanel);
-
-		scrollPane_1.setViewportView(table);
 	}
 }
