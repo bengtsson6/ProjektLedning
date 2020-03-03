@@ -73,5 +73,8 @@ public class Staff {
 	public void removeSecurityLevel() {
 		this.securityLevel.clear();
 	}
+	public void addSecurityLevel(SecurityLevel securityLevel) {
+		this.securityLevel.add(securityLevel);
+	}
 
 }
