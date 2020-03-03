@@ -16,6 +16,8 @@ import java.awt.CardLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class Pycelle {
 
@@ -24,6 +26,7 @@ public class Pycelle {
 	private JTextField txtfield_staffPanel_name;
 	private JTextField txtField_staffPanel_phoneNumber;
 	private JTextField txtField_staffPanel_eMail;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -53,7 +56,7 @@ public class Pycelle {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 573, 393);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
 		
@@ -160,5 +163,19 @@ public class Pycelle {
 		
 		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(428, 239, 83, 74);
+		staffPanel.add(scrollPane_1);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"Name"
+			}
+		));
+		scrollPane_1.setViewportView(table);
 	}
 }
