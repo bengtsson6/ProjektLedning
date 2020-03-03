@@ -18,6 +18,7 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.DefaultComboBoxModel;
 
 public class Pycelle {
 
@@ -106,6 +107,7 @@ public class Pycelle {
 		staffPanel.add(comboBox_staffPanel_chooseSN);
 		
 		JComboBox comboBox_startPanel_chooseTitle = new JComboBox();
+		comboBox_startPanel_chooseTitle.setModel(new DefaultComboBoxModel(new String[] {"Teacher", "Professor", "Administator", "Janitor", "Receptionist", "Cleaning staff", "Guest"}));
 		comboBox_startPanel_chooseTitle.setEditable(true);
 		comboBox_startPanel_chooseTitle.setBounds(63, 96, 96, 22);
 		staffPanel.add(comboBox_startPanel_chooseTitle);
@@ -119,23 +121,23 @@ public class Pycelle {
 		staffPanel.add(btn_staffPanel_Back);
 		
 		JRadioButton rdbtn_staffPanel_secLvl2 = new JRadioButton("Security level 2");
-		rdbtn_staffPanel_secLvl2.setBounds(165, 64, 111, 23);
+		rdbtn_staffPanel_secLvl2.setBounds(165, 100, 129, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl2);
 		
 		JRadioButton rdbtn_staffPanel_secLvl3 = new JRadioButton("Security level 3");
-		rdbtn_staffPanel_secLvl3.setBounds(165, 95, 111, 23);
+		rdbtn_staffPanel_secLvl3.setBounds(165, 120, 129, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl3);
 		
 		JRadioButton rdbtn_staffPanel_secLvl4 = new JRadioButton("Security level 4");
-		rdbtn_staffPanel_secLvl4.setBounds(165, 126, 111, 23);
+		rdbtn_staffPanel_secLvl4.setBounds(165, 140, 129, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl4);
 		
 		JRadioButton rdbtn_staffPanel_secLvl5 = new JRadioButton("Security level 5");
-		rdbtn_staffPanel_secLvl5.setBounds(165, 158, 111, 23);
+		rdbtn_staffPanel_secLvl5.setBounds(165, 160, 129, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl5);
 		
 		JRadioButton rdbtn_staffPanel_secLvl1 = new JRadioButton("Security level 1");
-		rdbtn_staffPanel_secLvl1.setBounds(165, 33, 111, 23);
+		rdbtn_staffPanel_secLvl1.setBounds(165, 80, 129, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl1);
 		
 		JLabel lbl_staffPanel_obligatorySN = new JLabel("*");
@@ -151,11 +153,11 @@ public class Pycelle {
 		staffPanel.add(lbl_staffPanel_obligatoryT);
 		
 		JLabel lbl_staffPanel_chooseSecurityLevel = new JLabel("Choose security level:");
-		lbl_staffPanel_chooseSecurityLevel.setBounds(162, 9, 114, 14);
+		lbl_staffPanel_chooseSecurityLevel.setBounds(180, 68, 114, 14);
 		staffPanel.add(lbl_staffPanel_chooseSecurityLevel);
 		
 		JLabel lbl_staffPanel_obligatorySL = new JLabel("*");
-		lbl_staffPanel_obligatorySL.setBounds(148, 9, 11, 14);
+		lbl_staffPanel_obligatorySL.setBounds(169, 68, 11, 14);
 		staffPanel.add(lbl_staffPanel_obligatorySL);
 		
 		JScrollPane scrollPane_staffPanel_txtA = new JScrollPane();
