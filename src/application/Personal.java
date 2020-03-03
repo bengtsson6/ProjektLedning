@@ -1,5 +1,5 @@
 package application;
 
-public class Personal {
+public class Personal {Hej
 
 }
