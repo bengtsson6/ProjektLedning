@@ -20,6 +20,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.SwingConstants;
 
 public class Pycelle extends JFrame{
 	private Controller controller;
@@ -62,26 +63,22 @@ public class Pycelle extends JFrame{
 		staffPanel.setLayout(null);
 		
 		txtField_staffPanel_socialNumber = new JTextField();
-		txtField_staffPanel_socialNumber.setText("Social number");
-		txtField_staffPanel_socialNumber.setBounds(63, 34, 96, 20);
+		txtField_staffPanel_socialNumber.setBounds(103, 34, 96, 20);
 		staffPanel.add(txtField_staffPanel_socialNumber);
 		txtField_staffPanel_socialNumber.setColumns(10);
 		
 		txtfield_staffPanel_name = new JTextField();
-		txtfield_staffPanel_name.setText("Name");
-		txtfield_staffPanel_name.setBounds(63, 65, 96, 20);
+		txtfield_staffPanel_name.setBounds(103, 65, 96, 20);
 		staffPanel.add(txtfield_staffPanel_name);
 		txtfield_staffPanel_name.setColumns(10);
 		
 		txtField_staffPanel_phoneNumber = new JTextField();
-		txtField_staffPanel_phoneNumber.setText("Phone number");
-		txtField_staffPanel_phoneNumber.setBounds(63, 129, 96, 20);
+		txtField_staffPanel_phoneNumber.setBounds(103, 129, 96, 20);
 		staffPanel.add(txtField_staffPanel_phoneNumber);
 		txtField_staffPanel_phoneNumber.setColumns(10);
 		
 		txtField_staffPanel_eMail = new JTextField();
-		txtField_staffPanel_eMail.setText("E-mail");
-		txtField_staffPanel_eMail.setBounds(63, 160, 96, 20);
+		txtField_staffPanel_eMail.setBounds(103, 160, 96, 20);
 		staffPanel.add(txtField_staffPanel_eMail);
 		txtField_staffPanel_eMail.setColumns(10);
 		
@@ -94,61 +91,58 @@ public class Pycelle extends JFrame{
 		staffPanel.add(btn_staffPanel_delete);
 		
 		JButton btn_staffPanel_update = new JButton("Update");
-		btn_staffPanel_update.setBounds(435, 178, 89, 23);
+		btn_staffPanel_update.setBounds(336, 212, 89, 23);
 		staffPanel.add(btn_staffPanel_update);
-		
-		JComboBox comboBox_staffPanel_chooseSN = new JComboBox();
-		comboBox_staffPanel_chooseSN.setBounds(428, 145, 96, 22);
-		staffPanel.add(comboBox_staffPanel_chooseSN);
 		
 		JComboBox comboBox_startPanel_chooseTitle = new JComboBox();
 		comboBox_startPanel_chooseTitle.setModel(new DefaultComboBoxModel(new String[] {"Teacher", "Professor", "Administator", "Janitor", "Receptionist", "Cleaning staff", "Guest"}));
 		comboBox_startPanel_chooseTitle.setEditable(true);
-		comboBox_startPanel_chooseTitle.setBounds(63, 96, 96, 22);
+		comboBox_startPanel_chooseTitle.setBounds(103, 96, 96, 22);
 		staffPanel.add(comboBox_startPanel_chooseTitle);
 		
 		JButton btn_staffPanel_read = new JButton("Read?");
 		btn_staffPanel_read.setBounds(162, 212, 89, 23);
 		staffPanel.add(btn_staffPanel_read);
 		
-		JRadioButton rdbtn_staffPanel_secLvl2 = new JRadioButton("Security level 2");
-		rdbtn_staffPanel_secLvl2.setBounds(165, 100, 129, 23);
+		JRadioButton rdbtn_staffPanel_secLvl2 = new JRadioButton("Public spaces");
+		rdbtn_staffPanel_secLvl2.setBounds(236, 74, 129, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl2);
 		
-		JRadioButton rdbtn_staffPanel_secLvl3 = new JRadioButton("Security level 3");
-		rdbtn_staffPanel_secLvl3.setBounds(165, 120, 129, 23);
+		JRadioButton rdbtn_staffPanel_secLvl3 = new JRadioButton("Service rooms");
+		rdbtn_staffPanel_secLvl3.setToolTipText("Server room, cleaning, kitchen");
+		rdbtn_staffPanel_secLvl3.setBounds(236, 94, 232, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl3);
 		
-		JRadioButton rdbtn_staffPanel_secLvl4 = new JRadioButton("Security level 4");
-		rdbtn_staffPanel_secLvl4.setBounds(165, 140, 129, 23);
+		JRadioButton rdbtn_staffPanel_secLvl4 = new JRadioButton("Classrooms");
+		rdbtn_staffPanel_secLvl4.setBounds(236, 114, 129, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl4);
 		
-		JRadioButton rdbtn_staffPanel_secLvl5 = new JRadioButton("Security level 5");
-		rdbtn_staffPanel_secLvl5.setBounds(165, 160, 129, 23);
+		JRadioButton rdbtn_staffPanel_secLvl5 = new JRadioButton("Offices");
+		rdbtn_staffPanel_secLvl5.setBounds(236, 134, 129, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl5);
 		
-		JRadioButton rdbtn_staffPanel_secLvl1 = new JRadioButton("Security level 1");
-		rdbtn_staffPanel_secLvl1.setBounds(165, 80, 129, 23);
+		JRadioButton rdbtn_staffPanel_secLvl1 = new JRadioButton("Entrance");
+		rdbtn_staffPanel_secLvl1.setBounds(236, 54, 129, 23);
 		staffPanel.add(rdbtn_staffPanel_secLvl1);
 		
 		JLabel lbl_staffPanel_obligatorySN = new JLabel("*");
-		lbl_staffPanel_obligatorySN.setBounds(52, 37, 11, 14);
+		lbl_staffPanel_obligatorySN.setBounds(92, 37, 11, 14);
 		staffPanel.add(lbl_staffPanel_obligatorySN);
 		
 		JLabel lbl_staffPanel_obligatoryN = new JLabel("*");
-		lbl_staffPanel_obligatoryN.setBounds(52, 68, 11, 14);
+		lbl_staffPanel_obligatoryN.setBounds(92, 68, 11, 14);
 		staffPanel.add(lbl_staffPanel_obligatoryN);
 		
 		JLabel lbl_staffPanel_obligatoryT = new JLabel("*");
-		lbl_staffPanel_obligatoryT.setBounds(52, 100, 11, 14);
+		lbl_staffPanel_obligatoryT.setBounds(92, 100, 11, 14);
 		staffPanel.add(lbl_staffPanel_obligatoryT);
 		
-		JLabel lbl_staffPanel_chooseSecurityLevel = new JLabel("Choose security level:");
-		lbl_staffPanel_chooseSecurityLevel.setBounds(180, 68, 114, 14);
+		JLabel lbl_staffPanel_chooseSecurityLevel = new JLabel("Person should have access to:");
+		lbl_staffPanel_chooseSecurityLevel.setBounds(236, 37, 155, 14);
 		staffPanel.add(lbl_staffPanel_chooseSecurityLevel);
 		
 		JLabel lbl_staffPanel_obligatorySL = new JLabel("*");
-		lbl_staffPanel_obligatorySL.setBounds(169, 68, 11, 14);
+		lbl_staffPanel_obligatorySL.setBounds(381, 37, 11, 14);
 		staffPanel.add(lbl_staffPanel_obligatorySL);
 		
 		JScrollPane scrollPane_staffPanel_txtA = new JScrollPane();
@@ -173,5 +167,30 @@ public class Pycelle extends JFrame{
 		));
 
 		scrollPane_staffPanel_Jtbl.setViewportView(JTable_staffPanel);
+		
+		JLabel lblSocialNumber = new JLabel("Social number:");
+		lblSocialNumber.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblSocialNumber.setBounds(0, 40, 92, 14);
+		staffPanel.add(lblSocialNumber);
+		
+		JLabel lblName = new JLabel("Name:");
+		lblName.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblName.setBounds(0, 71, 92, 14);
+		staffPanel.add(lblName);
+		
+		JLabel lblTitle = new JLabel("Title:");
+		lblTitle.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblTitle.setBounds(0, 103, 92, 14);
+		staffPanel.add(lblTitle);
+		
+		JLabel lblPhoneNumber = new JLabel("Phone number:");
+		lblPhoneNumber.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPhoneNumber.setBounds(0, 135, 92, 14);
+		staffPanel.add(lblPhoneNumber);
+		
+		JLabel lblEmail = new JLabel("E-mail:");
+		lblEmail.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblEmail.setBounds(0, 166, 92, 14);
+		staffPanel.add(lblEmail);
 	}
 }
