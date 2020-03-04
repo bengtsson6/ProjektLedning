@@ -24,11 +24,14 @@ public class Controller {
 		staffRegister.removeStaff(socialNumber);
 		return tmp;
 	}
-	public Staff updateStaff(String socialNumber, String name, String phoneNumber, String email, String title) {
+	public Staff updateStaff(String socialNumber, String name, String phoneNumber, String email, String title){
 		staffRegister.findStaff(socialNumber).setName(name);
 		staffRegister.findStaff(socialNumber).setPhoneNumber(phoneNumber);
 		staffRegister.findStaff(socialNumber).setEmail(email);
 		staffRegister.findStaff(socialNumber).setTitle(title);
+		return staffRegister.findStaff(socialNumber);
+	}
+	public Staff findStaff(String socialNumber) {
 		return staffRegister.findStaff(socialNumber);
 	}
 	public String getStaffSecurityLevel(String socialNumber) {
