@@ -38,5 +38,8 @@ public class Controller {
 		}
 		return levels;
 	}
+	public ArrayList<Staff> getAllStaff(){
+		return this.staffRegister.getStaffRegister();
+	}
 
 }
