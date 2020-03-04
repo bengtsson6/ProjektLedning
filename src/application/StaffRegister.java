@@ -34,5 +34,15 @@ public class StaffRegister {
 		}
 		return null;
 	}
+	public SecurityLevel findSecurityLevel(String level){
+		for (Staff staff : staffRegister) {
+			for (SecurityLevel tmp : staff.getSecurityLevel()) {
+				if (tmp.getLevel().equals(level)) {
+					return tmp;
+				}
+			}
+		}
+		return null;
+	}
 	
 }
