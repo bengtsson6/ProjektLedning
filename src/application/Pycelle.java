@@ -52,12 +52,19 @@ public class Pycelle extends JFrame{
 			}
 		});
 	}
-
+	
+	public void JTablefiller() {
+	DefaultTableModel modelStaff = (DefaultTableModel) JTable_staffPanel.getModel();
+	modelStaff.setRowCount(0);
+	for(Staff staff : controller.getAllStaff()) {
+		modelStaff.addRow(new Object[] { staff.getSocialNumber(), staff.getName(), staff.getTitle(), staff.getPhoneNumber(), staff.getEmail(), " " });
+		}
+	}
 	/**
 	 * Create the application.
 	 */
 	public Pycelle(Controller controller) {
-		setTitle("Start");
+		setTitle("Staff Register");
 		this.controller = controller;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
@@ -132,17 +139,21 @@ public class Pycelle extends JFrame{
 			new String[] {
 				"Social Number", "Name", "Title", "Phone Number", "Email", "Access"
 			}
-		));
+		) {
+			boolean[] columnEditables = new boolean[] {
+				false, false, false, false, false, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
 		JTable_staffPanel.getColumnModel().getColumn(0).setPreferredWidth(116);
 		JTable_staffPanel.getColumnModel().getColumn(3).setPreferredWidth(99);
 		JTable_staffPanel.getColumnModel().getColumn(5).setPreferredWidth(191);
 
 		scrollPane_staffPanel_Jtbl.setViewportView(JTable_staffPanel);
 		
-		DefaultTableModel modelStaff = (DefaultTableModel) JTable_staffPanel.getModel();
-		for(Staff staff : controller.getAllStaff()) {
-			modelStaff.addRow(new Object[] { staff.getSocialNumber(), staff.getName(), staff.getTitle(), staff.getPhoneNumber(), staff.getEmail(), " " });
-		}
+		JTablefiller();
 		
 		JTable_staffPanel.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
@@ -192,10 +203,7 @@ public class Pycelle extends JFrame{
 					comboBox_staffPanel_chooseTitle.setSelectedIndex(0);
 				}
 				
-				modelStaff.setRowCount(0);
-				for(Staff staff : controller.getAllStaff()) {
-					modelStaff.addRow(new Object[] { staff.getSocialNumber(), staff.getName(), staff.getTitle(), staff.getPhoneNumber(), staff.getEmail(), " " });
-				}
+				JTablefiller();
 			}
 		});
 		btn_staffPanel_addStaff.setBounds(110, 212, 89, 23);
@@ -223,12 +231,7 @@ public class Pycelle extends JFrame{
 				}
 				
 				
-				
-				
-				modelStaff.setRowCount(0);
-				for(Staff staff : controller.getAllStaff()) {
-					modelStaff.addRow(new Object[] { staff.getSocialNumber(), staff.getName(), staff.getTitle(), staff.getPhoneNumber(), staff.getEmail(), " " });
-				}
+				JTablefiller();
 			 }
 		  });
 		
@@ -257,10 +260,7 @@ public class Pycelle extends JFrame{
 					textArea_staffPanel.setText("Pick an existing social number to update");
 				}
 					
-					modelStaff.setRowCount(0);
-					for(Staff staff : controller.getAllStaff()) {
-						modelStaff.addRow(new Object[] { staff.getSocialNumber(), staff.getName(), staff.getTitle(), staff.getPhoneNumber(), staff.getEmail(), " " });
-					}
+				JTablefiller();
 				 }
 			  });
 		

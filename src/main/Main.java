@@ -16,9 +16,10 @@ public class Main {
 		
 		StaffRegister staffRegister = new StaffRegister();
 		
-		
-		
-		
+		Staff s1 = new Staff("Magnus", "904210-3245", "074002341", "Magnus@lund.se", "Janitor"); 
+		Staff s2 = new Staff("Bo", "901032-4444", "079234111", "Bo@lund.se", "Teacher");
+		staffRegister.addStaff(s1);
+		staffRegister.addStaff(s2);
 		
 		Pycelle frame = new Pycelle(new Controller(staffRegister));
 		frame.setVisible(true);
