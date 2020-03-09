@@ -25,6 +25,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.SwingConstants;
+import javax.swing.JCheckBox;
 
 public class Pycelle extends JFrame{
 	private Controller controller;
@@ -71,28 +72,7 @@ public class Pycelle extends JFrame{
 		staffPanel = new JPanel();
 		staffPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(staffPanel);
-		staffPanel.setLayout(null);	
-		
-		JRadioButton rdbtn_staffPanel_secLvl2 = new JRadioButton("Public spaces");
-		rdbtn_staffPanel_secLvl2.setBounds(421, 69, 129, 23);
-		staffPanel.add(rdbtn_staffPanel_secLvl2);
-		
-		JRadioButton rdbtn_staffPanel_secLvl3 = new JRadioButton("Service rooms");
-		rdbtn_staffPanel_secLvl3.setToolTipText("Server room, cleaning, kitchen");
-		rdbtn_staffPanel_secLvl3.setBounds(421, 89, 232, 23);
-		staffPanel.add(rdbtn_staffPanel_secLvl3);
-		
-		JRadioButton rdbtn_staffPanel_secLvl4 = new JRadioButton("Classrooms");
-		rdbtn_staffPanel_secLvl4.setBounds(421, 109, 129, 23);
-		staffPanel.add(rdbtn_staffPanel_secLvl4);
-		
-		JRadioButton rdbtn_staffPanel_secLvl5 = new JRadioButton("Offices");
-		rdbtn_staffPanel_secLvl5.setBounds(421, 129, 129, 23);
-		staffPanel.add(rdbtn_staffPanel_secLvl5);
-		
-		JRadioButton rdbtn_staffPanel_secLvl1 = new JRadioButton("Entrance");
-		rdbtn_staffPanel_secLvl1.setBounds(421, 49, 129, 23);
-		staffPanel.add(rdbtn_staffPanel_secLvl1);
+		staffPanel.setLayout(null);
 		
 		txtField_staffPanel_socialNumber = new JTextField();
 		txtField_staffPanel_socialNumber.setBounds(213, 32, 131, 20);
@@ -114,6 +94,26 @@ public class Pycelle extends JFrame{
 		staffPanel.add(txtField_staffPanel_eMail);
 		txtField_staffPanel_eMail.setColumns(10);
 		
+		JCheckBox chckbxEntrance = new JCheckBox("Entrance");
+		chckbxEntrance.setBounds(421, 52, 93, 21);
+		staffPanel.add(chckbxEntrance);
+		
+		JCheckBox chckbxPublicSpaces = new JCheckBox("Public spaces");
+		chckbxPublicSpaces.setBounds(421, 71, 93, 21);
+		staffPanel.add(chckbxPublicSpaces);
+		
+		JCheckBox chckbxServiceRooms = new JCheckBox("Service rooms");
+		chckbxServiceRooms.setBounds(421, 89, 93, 21);
+		staffPanel.add(chckbxServiceRooms);
+		
+		JCheckBox chckbxClassrooms = new JCheckBox("Classrooms");
+		chckbxClassrooms.setBounds(421, 108, 93, 21);
+		staffPanel.add(chckbxClassrooms);
+		
+		JCheckBox chckbxOffice = new JCheckBox("Office");
+		chckbxOffice.setBounds(421, 127, 93, 21);
+		staffPanel.add(chckbxOffice);
+		
 		JComboBox comboBox_staffPanel_chooseTitle = new JComboBox();
 		comboBox_staffPanel_chooseTitle.setModel(new DefaultComboBoxModel(new String[] {"Teacher", "Professor", "Administator", "Janitor", "Receptionist", "Cleaning staff", "Guest"}));
 		comboBox_staffPanel_chooseTitle.setEditable(true);
@@ -121,14 +121,14 @@ public class Pycelle extends JFrame{
 		staffPanel.add(comboBox_staffPanel_chooseTitle);
 		
 		JScrollPane scrollPane_staffPanel_txtA = new JScrollPane();
-		scrollPane_staffPanel_txtA.setBounds(106, 276, 238, 69);
+		scrollPane_staffPanel_txtA.setBounds(106, 188, 238, 33);
 		staffPanel.add(scrollPane_staffPanel_txtA);
 		
 		JTextArea textArea_staffPanel = new JTextArea();
 		scrollPane_staffPanel_txtA.setViewportView(textArea_staffPanel);
 		
 		JScrollPane scrollPane_staffPanel_Jtbl = new JScrollPane();
-		scrollPane_staffPanel_Jtbl.setBounds(384, 276, 300, 69);
+		scrollPane_staffPanel_Jtbl.setBounds(44, 245, 685, 208);
 		staffPanel.add(scrollPane_staffPanel_Jtbl);
 		
 		JTable_staffPanel = new JTable();
@@ -147,8 +147,10 @@ public class Pycelle extends JFrame{
 				return columnEditables[column];
 			}
 		});
-		JTable_staffPanel.getColumnModel().getColumn(0).setPreferredWidth(116);
+		JTable_staffPanel.getColumnModel().getColumn(0).setPreferredWidth(95);
+		JTable_staffPanel.getColumnModel().getColumn(2).setPreferredWidth(55);
 		JTable_staffPanel.getColumnModel().getColumn(3).setPreferredWidth(99);
+		JTable_staffPanel.getColumnModel().getColumn(4).setPreferredWidth(110);
 		JTable_staffPanel.getColumnModel().getColumn(5).setPreferredWidth(191);
 
 		scrollPane_staffPanel_Jtbl.setViewportView(JTable_staffPanel);
@@ -168,7 +170,9 @@ public class Pycelle extends JFrame{
 					//FindPerson metod för access
 					for (SecurityLevel level : controller.findStaff(target.getValueAt(row, 0).toString()).getSecurityLevel()){
 						if (level.getLevel().equals("Entrance")) {
-							rdbtn_staffPanel_secLvl1.setSelected(true);
+							chckbxEntrance.setSelected(true);		
+						} else {
+							chckbxEntrance.setSelected(false);
 						}
 					}
 				}
@@ -206,7 +210,7 @@ public class Pycelle extends JFrame{
 				JTablefiller();
 			}
 		});
-		btn_staffPanel_addStaff.setBounds(110, 212, 89, 23);
+		btn_staffPanel_addStaff.setBounds(367, 178, 89, 23);
 		staffPanel.add(btn_staffPanel_addStaff);
 		
 		JButton btn_staffPanel_delete = new JButton("Delete");
@@ -235,7 +239,7 @@ public class Pycelle extends JFrame{
 			 }
 		  });
 		
-		btn_staffPanel_delete.setBounds(576, 212, 89, 23);
+		btn_staffPanel_delete.setBounds(466, 212, 89, 23);
 		staffPanel.add(btn_staffPanel_delete);
 		
 		JButton btn_staffPanel_update = new JButton("Update");
@@ -264,7 +268,7 @@ public class Pycelle extends JFrame{
 				 }
 			  });
 		
-		btn_staffPanel_update.setBounds(431, 212, 89, 23);
+		btn_staffPanel_update.setBounds(367, 212, 89, 23);
 		staffPanel.add(btn_staffPanel_update);
 		
 		JLabel lbl_staffPanel_chooseSecurityLevel = new JLabel("Person should have access to: *");
@@ -295,5 +299,6 @@ public class Pycelle extends JFrame{
 		lblEmail.setHorizontalAlignment(SwingConstants.LEFT);
 		lblEmail.setBounds(110, 164, 92, 14);
 		staffPanel.add(lblEmail);
+		
 	}
 }
