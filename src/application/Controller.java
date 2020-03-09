@@ -44,4 +44,7 @@ public class Controller {
 	public ArrayList<Staff> getAllStaff(){
 		return this.staffRegister.getStaffRegister();
 	}
+	public SecurityLevel findSecurityLevel(String level) {
+		return staffRegister.findSecurityLevel(level);
+	}
 }
