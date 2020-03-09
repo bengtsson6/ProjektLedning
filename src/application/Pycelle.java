@@ -173,10 +173,11 @@ public class Pycelle extends JFrame {
 		staffPanel.add(comboBox_staffPanel_chooseTitle);
 
 		JScrollPane scrollPane_staffPanel_txtA = new JScrollPane();
-		scrollPane_staffPanel_txtA.setBounds(106, 188, 238, 33);
+		scrollPane_staffPanel_txtA.setBounds(44, 188, 300, 29);
 		staffPanel.add(scrollPane_staffPanel_txtA);
 
 		JTextArea textArea_staffPanel = new JTextArea();
+		textArea_staffPanel.setEditable(false);
 		scrollPane_staffPanel_txtA.setViewportView(textArea_staffPanel);
 
 		JScrollPane scrollPane_staffPanel_Jtbl = new JScrollPane();
@@ -244,6 +245,7 @@ public class Pycelle extends JFrame {
 					textArea_staffPanel.setForeground(Color.RED);
 					textArea_staffPanel.setText("Please enter mandatory information");
 				} else if (controller.findStaff(socialNumber) != null) {
+					textArea_staffPanel.setForeground(Color.RED);
 					textArea_staffPanel.setText("Staff with Social Number: " + socialNumber + " already exists");
 				} else {
 					controller.addStaff(name, socialNumber, phoneNumber, email, title);
@@ -266,7 +268,7 @@ public class Pycelle extends JFrame {
 				}
 			}
 		});
-		btn_staffPanel_addStaff.setBounds(367, 178, 89, 23);
+		btn_staffPanel_addStaff.setBounds(367, 158, 89, 23);
 		staffPanel.add(btn_staffPanel_addStaff);
 
 		JButton btn_staffPanel_delete = new JButton("Delete");
@@ -294,7 +296,7 @@ public class Pycelle extends JFrame {
 			}
 		});
 
-		btn_staffPanel_delete.setBounds(466, 212, 89, 23);
+		btn_staffPanel_delete.setBounds(565, 160, 89, 23);
 		staffPanel.add(btn_staffPanel_delete);
 
 		JButton btn_staffPanel_update = new JButton("Update");
@@ -323,10 +325,10 @@ public class Pycelle extends JFrame {
 			}
 		});
 
-		btn_staffPanel_update.setBounds(367, 212, 89, 23);
+		btn_staffPanel_update.setBounds(466, 160, 89, 23);
 		staffPanel.add(btn_staffPanel_update);
 
-		JLabel lbl_staffPanel_chooseSecurityLevel = new JLabel("Person should have access to: *");
+		JLabel lbl_staffPanel_chooseSecurityLevel = new JLabel("Person should have access to: ");
 		lbl_staffPanel_chooseSecurityLevel.setBounds(421, 32, 218, 14);
 		staffPanel.add(lbl_staffPanel_chooseSecurityLevel);
 
@@ -354,6 +356,10 @@ public class Pycelle extends JFrame {
 		lblEmail.setHorizontalAlignment(SwingConstants.LEFT);
 		lblEmail.setBounds(110, 164, 92, 14);
 		staffPanel.add(lblEmail);
+		
+		JLabel lblFieldsMarkedWith = new JLabel("Fields marked with * is mandatory");
+		lblFieldsMarkedWith.setBounds(106, 9, 232, 13);
+		staffPanel.add(lblFieldsMarkedWith);
 
 	}
 }

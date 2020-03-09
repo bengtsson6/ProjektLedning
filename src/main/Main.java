@@ -22,7 +22,6 @@ public class Main {
 		staffRegister.addStaff(s2);
 		
 		SecurityLevel a1 = new SecurityLevel("Entrance");
-		s1.addSecurityLevel(a1);
 		
 		Pycelle frame = new Pycelle(new Controller(staffRegister));
 		frame.setVisible(true);
