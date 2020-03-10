@@ -70,6 +70,7 @@ public class Pycelle extends JFrame {
 
 	public void chchbxCheck(String socialNumber) {
 		controller.findStaff(socialNumber).removeSecurityLevel();
+		
 		if (chckbxEntrance.isSelected()) {
 			if (controller.findSecurityLevel("Entrance") != null) {
 				controller.findStaff(socialNumber)
@@ -87,11 +88,11 @@ public class Pycelle extends JFrame {
 			}
 		}
 		if (chckbxServiceRooms.isSelected()) {
-			if (controller.findSecurityLevel("Service rooms") != null) {
+			if (controller.findSecurityLevel("Service Rooms") != null) {
 				controller.findStaff(socialNumber)
-						.addSecurityLevel(controller.findSecurityLevel("Service rooms"));
+						.addSecurityLevel(controller.findSecurityLevel("Service Rooms"));
 			} else {
-				controller.findStaff(socialNumber).addSecurityLevel(new SecurityLevel("Service rooms"));
+				controller.findStaff(socialNumber).addSecurityLevel(new SecurityLevel("Service Rooms"));
 			}
 		}
 		if (chckbxClassrooms.isSelected()) {
@@ -215,18 +216,40 @@ public class Pycelle extends JFrame {
 					txtField_staffPanel_phoneNumber.setText(target.getValueAt(row, 3).toString());
 					txtField_staffPanel_eMail.setText(target.getValueAt(row, 4).toString());
 					// FindPerson metod för access
-					if (!controller.findStaff(target.getValueAt(row, 0).toString()).getSecurityLevel().isEmpty()) {
+					
+					if (!controller.findStaff(target.getValueAt(row, 0).toString()).getSecurityLevel().isEmpty()){
+						chckbxEntrance.setSelected(false);
+						chckbxPublicSpaces.setSelected(false);
+						chckbxServiceRooms.setSelected(false);
+						chckbxClassrooms.setSelected(false);
+						chckbxOffice.setSelected(false);
 						for (SecurityLevel level : controller.findStaff(target.getValueAt(row, 0).toString())
 								.getSecurityLevel()) {
 							if (level.getLevel().equals("Entrance")) {
 								chckbxEntrance.setSelected(true);
-							} else {
-								chckbxEntrance.setSelected(false);
+								System.out.println("1");
 							}
-
+							if(level.getLevel().equals("Public Spaces")) {
+								chckbxPublicSpaces.setSelected(true);
+								System.out.println("3");
+							}
+							if(level.getLevel().equals("Service Rooms")) {
+								chckbxServiceRooms.setSelected(true);
+							}
+							if(level.getLevel().equals("Classrooms")) {
+								chckbxClassrooms.setSelected(true);
+							}
+							if(level.getLevel().equals("Office")) {
+								chckbxOffice.setSelected(true);
+							}
 						}
 					} else {
+						System.out.println("5");
 						chckbxEntrance.setSelected(false);
+						chckbxPublicSpaces.setSelected(false);
+						chckbxServiceRooms.setSelected(false);
+						chckbxClassrooms.setSelected(false);
+						chckbxOffice.setSelected(false);
 					}
 				}
 			}
@@ -314,6 +337,11 @@ public class Pycelle extends JFrame {
 					txtField_staffPanel_name.setText("");
 					txtField_staffPanel_phoneNumber.setText("");
 					txtField_staffPanel_eMail.setText("");
+					chckbxEntrance.setSelected(false);
+					chckbxPublicSpaces.setSelected(false);
+					chckbxServiceRooms.setSelected(false);
+					chckbxClassrooms.setSelected(false);
+					chckbxOffice.setSelected(false);
 					comboBox_staffPanel_chooseTitle.setSelectedIndex(0);
 					textArea_staffPanel.setForeground(Color.BLACK);
 					textArea_staffPanel.setText("Staff has been updated");
