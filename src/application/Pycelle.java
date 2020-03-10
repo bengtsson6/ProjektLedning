@@ -307,6 +307,11 @@ public class Pycelle extends JFrame {
 					txtField_staffPanel_name.setText("");
 					txtField_staffPanel_phoneNumber.setText("");
 					txtField_staffPanel_eMail.setText("");
+					chckbxEntrance.setSelected(false);
+					chckbxPublicSpaces.setSelected(false);
+					chckbxServiceRooms.setSelected(false);
+					chckbxClassrooms.setSelected(false);
+					chckbxOffice.setSelected(false);
 					comboBox_staffPanel_chooseTitle.setSelectedIndex(0);
 					textArea_staffPanel.setForeground(Color.BLACK);
 					textArea_staffPanel.setText("Staff has been removed");
