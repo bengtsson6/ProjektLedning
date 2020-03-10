@@ -249,7 +249,7 @@ public class Pycelle extends JFrame {
 					textArea_staffPanel.setText("Staff with Social Number: " + socialNumber + " already exists");
 				} else {
 					controller.addStaff(name, socialNumber, phoneNumber, email, title);
-					
+					chchbxCheck(socialNumber);
 
 					textArea_staffPanel.setForeground(Color.BLACK);
 					textArea_staffPanel.setText(name + " has been added");
@@ -268,7 +268,7 @@ public class Pycelle extends JFrame {
 				}
 			}
 		});
-		btn_staffPanel_addStaff.setBounds(367, 158, 89, 23);
+		btn_staffPanel_addStaff.setBounds(367, 160, 89, 23);
 		staffPanel.add(btn_staffPanel_addStaff);
 
 		JButton btn_staffPanel_delete = new JButton("Delete");
@@ -309,6 +309,7 @@ public class Pycelle extends JFrame {
 				String email = txtField_staffPanel_eMail.getText();
 				if (controller.findStaff(socialNumber) != null) {
 					controller.updateStaff(socialNumber, name, phoneNumber, email, title);
+					chchbxCheck(socialNumber);
 					txtField_staffPanel_socialNumber.setText("");
 					txtField_staffPanel_name.setText("");
 					txtField_staffPanel_phoneNumber.setText("");
